@@ -66,3 +66,59 @@
 #     return result
 
 # print(sortedSquares(nums))
+
+
+#3 Duplicate Zeros
+# Input: [1,0,2,3,0,4,5,0]
+# Output: null
+# Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
+
+# nums = [1,0,2,3,0,4,5,0]
+
+
+# def duplicateZeros(nums):
+#     for i in range(len(nums) - 1, -1 ,-1):
+#         if nums[i] == 0:
+#             print(i)
+#             nums.pop()
+#             nums.insert(i,0)
+    
+    
+    
+
+# print(duplicateZeros(nums))
+
+#4 Check If N and Its Double Exist
+# Given an array arr of integers, check if there exists two integers N and M such that N is the double of M ( i.e. N = 2 * M).
+# arr = [10,2,5,3]
+# arr = [7,1,14,11]
+# arr = [3,1,7,11]
+# arr = [-2,0,10,-19,4,6,-8]
+# arr = [-20,8,-6,-14,0,-19,14,4]
+# arr = [3,1,7,11]
+#My solution
+# def checkIfExist(arr):
+#     if arr.count(0) ==2: return True
+#     for i in range(len(arr)):
+#         for num in arr:
+#             if arr[i] * 2 == num and arr[i] != num:           
+#                 return True
+#     return False
+ #Better solution
+
+# def checkIfExist(arr):
+#     seen = set()
+#     for i in arr:
+#         if 2 * i in seen or i / 2 in seen:
+#             return True
+#         seen.add(i)
+#     return False
+
+
+
+# print(checkIfExist([-2,0,10,-19,4,6,-8])) #false
+# print(checkIfExist([-20,8,-6,-14,0,-19,14,4])) #true
+# print(checkIfExist([0,0])) #true
+# print(checkIfExist([2,3,3,0,0])) #true
+# print(checkIfExist([11,2,8,3,3,0,16])) #true
+    
